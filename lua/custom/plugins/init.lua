@@ -26,4 +26,16 @@ return {
     'nvim-telescope/telescope-file-browser.nvim',
     dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
   },
+  {
+    'navarasu/onedark.nvim',
+    priority = 1000, -- Make sure to load this before all the other start plugins.
+    opts = { style = 'darker' },
+    -- {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}
+    init = function()
+      vim.cmd.colorscheme 'onedark'
+
+      -- You can configure highlights by doing something like:
+      vim.cmd.hi 'Comment gui=none'
+    end,
+  },
 }
